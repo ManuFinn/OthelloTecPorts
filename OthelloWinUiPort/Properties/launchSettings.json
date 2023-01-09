@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "OthelloWinUiPort (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "OthelloWinUiPort (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
