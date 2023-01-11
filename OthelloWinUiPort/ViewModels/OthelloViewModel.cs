@@ -1,5 +1,6 @@
 ﻿//using GalaSoft.MvvmLight.Command;
-using IA_OthelloReversi.Models;
+using Microsoft.UI.Xaml.Controls;
+using OthelloWinUiPort.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,7 +14,7 @@ using System.Windows;
 using System.Windows.Input;
 //using System.Windows.Media;
 
-namespace IA_OthelloReversi.ViewModels
+namespace OthelloWinUiPort.ViewModels
 {
     public class OthelloViewModel:INotifyPropertyChanged
     {
@@ -79,8 +80,8 @@ namespace IA_OthelloReversi.ViewModels
         {
             Othello = new Othello('W', 4, 0, 0);
             GenerarPartida();
-            //FichaCommand = new RelayCommand<Button>(ejecutarActualizacion);
-            //nuevoJuego = new RelayCommand(GenerarPartida);
+            //FichaCommand = new RelayCommand(ejecutarActualizacion);
+            nuevoJuego = new RelayCommand(GenerarPartida);
         }
 
         //private void ejecutarActualizacion(Button obj)

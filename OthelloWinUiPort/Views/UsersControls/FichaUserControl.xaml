@@ -1,0 +1,18 @@
+<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+<!-- Licensed under the MIT License. -->
+
+<UserControl
+    x:Class="OthelloWinUiPort.Views.UsersControls.FichaUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OthelloWinUiPort.Views.UsersControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="30" Background="Transparent">
+
+    <Grid Margin="0">
+        <Border Margin="0" BorderBrush="{Binding ColorFicha}" BorderThickness="6" CornerRadius="100" Width="30" Height="30">
+            <Border Background="{Binding ColorFicha}" CornerRadius="100"  Margin="-2"></Border>
+        </Border>
+    </Grid>
+</UserControl>
