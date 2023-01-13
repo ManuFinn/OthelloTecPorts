@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation and Contributors.
 // Licensed under the MIT License.
 
+using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -8,6 +9,8 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using OthelloWinUiPort.Models;
+using OthelloWinUiPort.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,9 +26,13 @@ namespace OthelloWinUiPort.Views.UsersControls
 {
     public sealed partial class FichaUserControl : UserControl
     {
+        //public Ficha? Ficha { get; }
+
         public FichaUserControl()
         {
             this.InitializeComponent();
+
+            //Ficha = Ioc.Default.GetService<Ficha>();
         }
     }
 }

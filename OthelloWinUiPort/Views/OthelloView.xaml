@@ -8,12 +8,13 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:OthelloWinUiPort.Views"
+    
     xmlns:vm="using:OthelloWinUiPort.ViewModels"
     xmlns:uc="using:OthelloWinUiPort.Views.UsersControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    
     <Grid Background="#249972">
         <Grid.RowDefinitions>
             <RowDefinition Height="100px"/>
@@ -38,7 +39,8 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Column="1" FontSize="40"  HorizontalAlignment="Center" Foreground="White" 
-                           Text="0"/>
+                           Text="{x:Bind ViewModel.CantidadNegras, Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged}"/>
                 <Border Margin="0" BorderBrush="Black" BorderThickness="6" CornerRadius="100" Width="50" Height="50">
                     <Border Background="Black" CornerRadius="100"  Margin="-2"></Border>
                 </Border>
@@ -51,14 +53,16 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock FontSize="40"  HorizontalAlignment="Center" Foreground="White" 
-                           Text="0"/>
+                           Text="{x:Bind ViewModel.CantidadBlancas, Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged}"/>
                 <Border Grid.Column="1" Margin="0" BorderBrush="White" BorderThickness="6" CornerRadius="100" Width="50" Height="50">
                     <Border Background="white" CornerRadius="100"  Margin="-2"></Border>
                 </Border>
             </Grid>
             <TextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3"
                    FontWeight="Bold" FontSize="20"  HorizontalAlignment="Center" 
-                   Foreground="White" Text="{x:Bind sys:DateTime.Now}"/>
+                   Foreground="White" Text="{x:Bind ViewModel.Mensaje, Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -143,16 +147,14 @@
                 <TextBlock Grid.Row="6" Text="G"/>
                 <TextBlock Grid.Row="7" Text="H"/>
             </Grid>
-            <ItemsControl x:Name="lstBoard" ItemsSource="{Binding FichasView}" Grid.Column="1" Grid.Row="1"
-                            HorizontalAlignment="Center" VerticalAlignment="Center"
+            <ItemsControl x:Name="lstBoard" Height="400" Width="400" ItemsSource="{x:Bind ViewModel.FichasView,Mode=TwoWay,
+                UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1"
+                            HorizontalAlignment="Center" Padding="0" VerticalAlignment="Center"
                  Background="#249972"
                            PointerPressed="lstBoard_PointerPressed">
-                <ItemsControl.RenderTransform>
-                    <RotateTransform  CenterX="200" CenterY="200" Angle="270" ></RotateTransform>
-                </ItemsControl.RenderTransform>
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <VariableSizedWrapGrid Orientation="Horizontal" />
+                        <VariableSizedWrapGrid  Margin="0" Orientation="Horizontal" MaximumRowsOrColumns="8"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>

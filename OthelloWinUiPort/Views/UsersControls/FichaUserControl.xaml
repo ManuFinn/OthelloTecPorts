@@ -10,8 +10,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" d:DesignWidth="30" Background="Transparent">
 
-    <Grid Margin="0">
-        <Border Margin="0" BorderBrush="{Binding ColorFicha}" BorderThickness="6" CornerRadius="100" Width="30" Height="30">
+    <Grid Margin="5">
+        <Border Margin="0" BorderBrush="{Binding ColorFicha}" BorderThickness="6" CornerRadius="100" Width="40" Height="40">
             <Border Background="{Binding ColorFicha}" CornerRadius="100"  Margin="-2"></Border>
         </Border>
     </Grid>
